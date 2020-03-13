@@ -1,0 +1,5 @@
+SYMBOL			TYPE			ADDRESS
+A			Variable		00001110
+B			Variable		00001111
+L2			Label			00001000
+L1			Label			00001001
