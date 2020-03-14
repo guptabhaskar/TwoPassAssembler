@@ -19,18 +19,33 @@
 10. Number of instructions should not exceed 256 or else it will give an error.
 
 ### Opcode Table
+
+This table is used to check whether an instruction has an opcode or not.
+
 ![error: Opcode Table Added](./Assets/Opcode_Table.png)
 
 ### Assembly Test Code
+
+This file is given as an input in both the passes. In the first pass, it checks for any kind of errors. 
+
 ![error: Assembly Code Added](./Assets/AssemblyCode.png)
 
 ### Variable Table
+
+This table comprises of the variable name and its local address.
+
 ![error: Variable Table Added](./Assets/VariableTable.png)
 
 ### Label Table
+
+This table comprises the label name and its address in the input file.
+
 ![error: Label Table Added](./Assets/LabelTable.png)
 
 ### Machine Code
+
+This text file has the machine code of the input file.
+
 ![error: Machine Code Added](./Assets/MachineCode.png)
 
 ### Error Handling
