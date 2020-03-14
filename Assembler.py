@@ -152,7 +152,7 @@ def pass1(error,opcode,symbols):
 					if(checkifinstruction(opcode,head)):
 						error=True
 						flag=False
-						print("Error found on line number "+str(lineno)+":Symbol cannot be a opcode.")
+						print("Error found on line number "+str(lineno)+": Symbol cannot be a opcode.")
 					if(head in symbols and flag):
 						if(symbols[head]==-1):
 							error=True
