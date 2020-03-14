@@ -76,6 +76,8 @@ If variable is used before the opcode in a instruction than it will give the fol
 If label name is a opcode than it will give the following output. 
 ![error: Label Name cannot be a Opcode](./Assets/Code8.png)
 ![error: Label Name cannot be a Opcode](./Assets/Error8.png)
+#### 9. Memory Limit Exceeded
+Overload triggered by more commands and variables processed than the maximum limit. Our assembler limit is 256 (0–255).
 
 ### Pseudo Code
 #### First Pass
