@@ -6,7 +6,7 @@ In this project, we have to create a two-pass assembler for the
 language for doinng this project. Initially, Assembly code 
 will be stored in assemblycode.txt. After the execution of the 
 program machine code will be stored in machinecode.txt. It also produces
-a symbol.txt which contains symbols used in the assembly code.
+a VariableTable.txt and LabelTable.txt which contains all the variables and labels used in the assembly code respectively.
 
 """
 
