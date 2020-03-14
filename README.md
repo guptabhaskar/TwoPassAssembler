@@ -23,13 +23,27 @@
 
 ### Error Handling
 
-#### 1. More than one opcode in instruction.
+#### 1. More than one opcode in Instruction
 
 **INP and DSP** both are opcodes. 
 ![error: More than One Opcode Error](./Assets/Code1.png)
 ![error: More than One Opcode Code](./Assets/Error1.png)
 
-#### 2. 
+#### 2. Label Name cannot be a Symbol Name
+![error: More than One Opcode Error](./Assets/Code2.png)
+![error: More than One Opcode Code](./Assets/Error2.png)
+
+#### 2. Label Name cannot be a Symbol Name
+![error: More than One Opcode Error](./Assets/Code2.png)
+![error: More than One Opcode Code](./Assets/Error2.png)
+
+#### 2. Label Name cannot be a Symbol Name
+![error: More than One Opcode Error](./Assets/Code2.png)
+![error: More than One Opcode Code](./Assets/Error2.png)
+
+#### 2. Label Name cannot be a Symbol Name
+![error: More than One Opcode Error](./Assets/Code2.png)
+![error: More than One Opcode Code](./Assets/Error2.png)
 
 ### Pseudo Code
 #### First Pass
