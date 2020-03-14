@@ -45,6 +45,10 @@
 ![error: No Opcode found in a Instruction](./Assets/Code5.png)
 ![error: No Opcode found in a Instruction](./Assets/Error5.png)
 
+#### 6. Insufficient Number of Arguments 
+![error: No Opcode found in a Arguments](./Assets/Code6.png)
+![error: No Opcode found in a Arguments](./Assets/Error6.png)
+
 ### Pseudo Code
 #### First Pass
 
