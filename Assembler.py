@@ -97,7 +97,7 @@ def pass1(error,opcode,symbols):
 				if(len(l)==1 and l[0]!='CLA' and l[0]!='STP' and flag):
 					error=True
 					flag=False
-					print("Error found on line number "+str(lineno)+": Insufficient no. of instructions.")
+					print("Error found on line number "+str(lineno)+": Insufficient no. of arguments.")
 				if(len(l)==2 and checkifinstruction(opcode,l[0])==False and checkifinstruction(opcode,l[1])==True and l[0]!='CLA' and l[0]!='STP' and flag):
 					error=True
 					flag=False
