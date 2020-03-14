@@ -18,15 +18,17 @@
 9. Symbol should only be defined once.
 10. Number of instructions should not exceed 256 or else it will give an error.
 
-#### Opcode Table
+### Opcode Table
 ![error: Opcode Table Added](./Assets/Opcode_Table.png)
 
 ### Error Handling
 
 #### 1. More than one opcode in instruction.
-![error: More than One Opcode Code](./Assets/Error1.png)
-![error: More than One Opcode Error](./Assets/Code1.png)
 
+![error: More than One Opcode Error](./Assets/Code1.png)
+![error: More than One Opcode Code](./Assets/Error1.png)
+
+#### 2. 
 
 ### Pseudo Code
 #### First Pass
