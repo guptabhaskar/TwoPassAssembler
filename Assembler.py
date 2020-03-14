@@ -104,7 +104,11 @@ def pass1(error,opcode,symbols):
 					print("Error found on line number "+str(lineno)+":Formatting Error")
 				####
 				for k in range(len(l)):
-					if(checkifinstruction(opcode,l[k])):
+					if(l[k] in opcode.keys()):
+						q=True
+					else:
+						q=False
+					if(q):
 						if(len(l)-k-1>=2):
 							print("ERROR on Line "+str(lineno)+": More than one variable/label provided.")	#If more than required variables are provided
 							error=True	
