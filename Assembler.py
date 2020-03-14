@@ -101,7 +101,7 @@ def pass1(error,opcode,symbols):
 				if(len(l)==2 and checkifinstruction(opcode,l[0])==False and checkifinstruction(opcode,l[1])==True and l[0]!='CLA' and l[0]!='STP' and flag):
 					error=True
 					flag=False
-					print("Error found on line number "+str(lineno)+":Formatting Error")
+					print("Error found on line number "+str(lineno)+": Formatting Error")
 				####
 				for k in range(len(l)):
 					if(l[k] in opcode.keys()):
@@ -116,7 +116,7 @@ def pass1(error,opcode,symbols):
 				if(len(l)>=3 and checkifinstruction(opcode,l[0])==False and checkifinstruction(opcode,l[1])==False and flag):
 					error=True
 					flag=False
-					print("Error found on line number "+str(lineno)+":Formatting Error")
+					print("Error found on line number "+str(lineno)+": Formatting Error")
 				colon=line.find(':')
 				if(colon!=-1 and flag):
 					head=line[:colon]
