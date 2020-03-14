@@ -80,7 +80,9 @@ If label name is an opcode than it will give the following output.
 Overload triggered by more commands and variables processed than the maximum limit. Our assembler limit is 256 (0–255).
 
 ### Pseudo Code
+
 #### First Pass
+
 
 If the first pass ends successfully, then only the second pass is executed.
 
@@ -144,3 +146,18 @@ occurs during the first pass. This stops the execution of the second pass from e
 
 
 #### Second Pass
+
+
+**1.** This is only executed if “error” is equal to False.
+
+
+**2.** All the Instructions are read again in the second pass. 
+
+
+**3.** Label Table and Variable Table are made in the second pass.
+
+
+**4.** Whole assembly code is converted into machine code line by line and added into the file machinecode.txt.
+
+
+
