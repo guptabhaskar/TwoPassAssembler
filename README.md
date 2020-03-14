@@ -25,6 +25,7 @@
 
 #### 1. More than one opcode in instruction.
 
+**INP and DSP** both are opcodes. 
 ![error: More than One Opcode Error](./Assets/Code1.png)
 ![error: More than One Opcode Code](./Assets/Error1.png)
 
