@@ -133,6 +133,7 @@ This function gives no. of opcodes in a line.
 '''
 
 **6.** We have defined a boolean type variable **“error”** which is **False** in the beginning and turns **True** if an error 
+
 occurs during the first pass. This stops the execution of the second pass from executing if **“error“** is equal to **True**. 
 
 #### Second Pass
