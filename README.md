@@ -13,9 +13,9 @@
 4. No literals are to be handled.
 5. Only the opcodes given should be used. All these opcodes are pre-added as a dictionary in the program and are not read from a separate file.
 6. Label cannot be an opcode and vice-versa.
-7. Symbol cannot be an opcode and vice-versa.
-8. Label cannot be a symbol and vice-versa.
-9. Symbol should only be defined once.
+7. Variable cannot be an opcode and vice-versa.
+8. Label cannot be a variable and vice-versa.
+9. Variable should only be defined once.
 10. Number of instructions should not exceed 256 or else it will give an error.
 
 ### Opcode Table
@@ -24,8 +24,8 @@
 ### Assembly Test Code
 ![error: Assembly Code Added](./Assets/AssemblyCode.png)
 
-### Symbol Table
-![error: Symbol Table Added](./Assets/SymbolTable.png)
+### Variable Table
+![error: Variable Table Added](./Assets/VariableTable.png)
 
 ### Label Table
 ![error: Label Table Added](./Assets/LabelTable.png)
