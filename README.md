@@ -43,6 +43,7 @@
 
 #### 2. Label Name cannot be a Symbol Name
 If we use a symbol name as a label name, it will throw an error as shown.
+
 ![error: Label Name cannot be a Symbol Name](./Assets/Code2.png)
 ![error: Label Name cannot be a Symbol Name](./Assets/Error2.png)
 
