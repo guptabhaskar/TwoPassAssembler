@@ -56,8 +56,8 @@ symbols and return that dictionary. And also returns a boolean value
 that will be True if it encountered a error.
 '''
 def pass1(error,opcode,symbols):
-	file=open("/Users/bhaskargupta/Desktop/AssemblerProject/Mine/assemblycode.txt","r")
-	file1=open("/Users/bhaskargupta/Desktop/AssemblerProject/Mine/assemblycode.txt","r")
+	file=open("assemblycode.txt","r")
+	file1=open("assemblycode.txt","r")
 	lines=list(file1.readlines())
 	length=len(lines)
 	lc=0
@@ -187,9 +187,9 @@ def pass2(opcode,symbols,l1,l2):
 		value=symbols[symbol]
 		binaryvalue=format(value,'08b')
 		symbols[symbol]=binaryvalue
-	mcode=open("/Users/bhaskargupta/Desktop/AssemblerProject/Mine/machinecode.txt",'w')
-	acode=open("/Users/bhaskargupta/Desktop/AssemblerProject/Mine/assemblycode.txt","r")
-	file1=open("/Users/bhaskargupta/Desktop/AssemblerProject/Mine/assemblycode.txt","r")
+	mcode=open("machinecode.txt",'w')
+	acode=open("assemblycode.txt","r")
+	file1=open("assemblycode.txt","r")
 	lines=list(file1.readlines())
 	length=len(lines)
 	while(True):
