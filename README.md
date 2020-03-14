@@ -37,9 +37,13 @@
 ![error: More than one Symbol provided](./Assets/Code3.png)
 ![error: More than one Symbol provided](./Assets/Error3.png)
 
-#### 3. More than one Label provided
+#### 4. More than one Label provided
 ![error: More than one Label provided](./Assets/Code4.png)
 ![error: More than one Label provided](./Assets/Error4.png)
+
+#### 5. No Opcode found in a Instruction
+![error: No Opcode found in a Instruction](./Assets/Code5.png)
+![error: No Opcode found in a Instruction](./Assets/Error5.png)
 
 ### Pseudo Code
 #### First Pass
