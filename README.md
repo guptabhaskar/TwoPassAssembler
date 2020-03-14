@@ -53,6 +53,10 @@
 ![error: Formatting Error](./Assets/Code7.png)
 ![error: Formatting Error](./Assets/Error7.png)
 
+#### 8. Label Name cannot be a Opcode
+![error: Label Name cannot be a Opcode](./Assets/Code8.png)
+![error: Label Name cannot be a Opcode](./Assets/Error8.png)
+
 ### Pseudo Code
 #### First Pass
 
