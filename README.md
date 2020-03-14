@@ -49,7 +49,7 @@
 ![error: No Opcode found in a Arguments](./Assets/Code6.png)
 ![error: No Opcode found in a Arguments](./Assets/Error6.png)
 
-#### 7. Formatting Error(Opcode occur after arguments in a instruction)
+#### 7. Formatting Error(Opcode occur after arguments in a Instruction)
 ![error: Formatting Error](./Assets/Code7.png)
 ![error: Formatting Error](./Assets/Error7.png)
 
