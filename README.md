@@ -24,7 +24,8 @@
 ### Error Handling
 
 #### 1. More than one opcode in instruction.
-![error: More than One Opcode](./Assets/Error1.png)
+![error: More than One Opcode Code](./Assets/Error1.png)
+![error: More than One Opcode Error](./Assets/Code1.png)
 
 
 ### Pseudo Code
