@@ -81,9 +81,13 @@ Overload triggered by more commands and variables processed than the maximum lim
 
 ### Pseudo Code
 #### First Pass
+
 If the first pass ends successfully, then only the second pass is executed. 
+
 **1.** Open input file to read the file line by line.
+
 **2.** Check and remove the commented part in the line if any. 
+
 **3.** Check the presence of opcode in a line by using the function
 	def opcodereturner(opcode,line):
 ''' 
@@ -91,6 +95,7 @@ Parameter Type: Opcode Dictionary, Line/Word to check
 Return Type: String 
 That is the opcode of the assembly opcode in that line.
 '''
+
 **4.** Check if its a instruction or not by using the function
 	def checkifinstruction(opcode,op):
 '''		
@@ -99,6 +104,7 @@ Return Type: Boolean
 Checks if the string is whether a instruction or not by 
 checking in the opcode dictionary keys.
 '''	
+
 **5.** Count the no. of opcodes in an instruction using the function
 def no_of_opcodes(line,opcode):
 '''
@@ -106,6 +112,7 @@ Parameter Type: Line, Opcode Dictionary
 Return Type: Int
 This function gives no. of opcodes in a line.
 '''
+
 **6.** We have defined a boolean type variable **“error”** which is **False** in the beginning and turns **True** if an error occurs during the first pass. This stops the execution of the second pass from executing if **“error“** is equal to **True**. 
 
 #### Second Pass
