@@ -20,4 +20,4 @@
 
 ### Opcode Table
 
-![error: Address out of bounds](./Assets/Opcode_Table.png)
+![error: Opcode Table Added](./Assets/Opcode_Table.png)
