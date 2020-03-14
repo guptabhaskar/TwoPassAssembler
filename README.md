@@ -33,17 +33,13 @@
 ![error: Label Name cannot be a Symbol Name](./Assets/Code2.png)
 ![error: Label Name cannot be a Symbol Name](./Assets/Error2.png)
 
-#### 3. More than one Symbol/Label provided
-![error: More than one Symbol/Label provided](./Assets/Code3.png)
-![error: More than one Symbol/Label provided](./Assets/Error3.png)
+#### 3. More than one Symbol provided
+![error: More than one Symbol provided](./Assets/Code3.png)
+![error: More than one Symbol provided](./Assets/Error3.png)
 
-#### 2. Label Name cannot be a Symbol Name
-![error: More than One Opcode Error](./Assets/Code2.png)
-![error: More than One Opcode Code](./Assets/Error2.png)
-
-#### 2. Label Name cannot be a Symbol Name
-![error: More than One Opcode Error](./Assets/Code2.png)
-![error: More than One Opcode Code](./Assets/Error2.png)
+#### 3. More than one Label provided
+![error: More than one Label provided](./Assets/Code4.png)
+![error: More than one Label provided](./Assets/Error4.png)
 
 ### Pseudo Code
 #### First Pass
