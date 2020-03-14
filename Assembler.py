@@ -180,7 +180,7 @@ def pass1(error,opcode,symbols):
 Parameter Type: Opcode Dictionary, Symbols Dictionary, List 
 Return type: Void
 This will run if their is no error in the assembly code. This will
-add corresponding machine code to machinecode.txt and all the symbols to symbol.txt.
+add corresponding machine code to machinecode.txt, all the variables to VariableTable.txt and all the labels to to LabelTable.txt.
 '''
 def pass2(opcode,symbols,l1,l2):
 	for symbol in symbols.keys():
