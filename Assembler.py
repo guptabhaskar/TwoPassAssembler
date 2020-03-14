@@ -126,11 +126,11 @@ def pass1(error,opcode,symbols):
 					if(checkifinstruction(opcode,head)):
 						error=True
 						flag=False
-						print("Error found on line number "+str(lineno)+":Symbol cannot be a opcode.")
+						print("Error found on line number "+str(lineno)+": Label cannot be a opcode.")
 					if(head in symbols and symbols[head]<=-1 and flag):
 						error=True
 						flag=False
-						print("Error found on line number "+str(lineno)+":Same symbol defined more than one time.")
+						print("Error found on line number "+str(lineno)+": Same symbol defined more than one time.")
 					symbols[head]=lc
 				elif(brz!=-1 or brp!=-1 or brn!=-1 and flag):
 					head=l[1]
