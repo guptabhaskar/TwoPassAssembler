@@ -214,18 +214,21 @@ def pass2(opcode,symbols,l1,l2):
 					mcode.write(opcodereturner(opcode,l[0])+" "+str(symbols[l[1]])+'\n')
 			else:
 				length-=1
-	stable=open("SymbolTable.txt",'w')
-	stable.write("SYMBOL\t\t\tTYPE\t\t\tADDRESS"+'\n')
+	vtable=open("VariableTable.txt",'w')
+	vtable.write("VARIABLE\tADDRESS"+'\n')
+	ltable=open("LabelTable.txt",'w')
+	ltable.write("LABEL\t\tADDRESS"+'\n')
 	symbolskeys=symbols.keys()
 	for i in symbolskeys:
 		if(int(symbols[i],2)<=length):
-			stable.write(i+'\t\t\t'+"Label"+'\t\t\t'+symbols[i]+'\n')
+			ltable.write(i+'\t\t\t'+symbols[i]+'\n')
 		else:
-			stable.write(i+'\t\t\t'+"Variable"+'\t\t'+symbols[i]+'\n')
+			vtable.write(i+'\t\t\t'+symbols[i]+'\n')
+	ltable.close()
 	mcode.close()
 	acode.close()
 	file1.close()
-	stable.close()
+	vtable.close()
 
 '''Initialization'''
 opcode={"CLA":"0000","LAC":"0001","SAC":"0010","ADD":"0011","SUB":"0100","BRZ":"0101","BRN":"0110","BRP":"0111","INP":"1000","DSP":"1001","MUL":"1010","DIV":"1011","STP":"1100"}
