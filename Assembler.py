@@ -48,7 +48,7 @@ def checkifinstruction(opcode,op):
 
 '''
 Parameter Type: Error(bool), Opcode Dictionary, Symbols Dictionary
-Return Type: Boolean,Dictionary
+Return Type: Boolean,Dictionary,No of lines
 This will read the assemblycode.txt file and will check if there is a
 error. If there is a error than it will change error to True and 
 Second Pass will not run. It also adds symbols to our dictionary called 
@@ -82,7 +82,8 @@ def pass1(error,opcode,symbols):
 				inp=line.find('INP')
 				sac=line.find('SAC')
 				stp=line.find('STP')
-				if(stp!=-1 and flag):
+				if(line.strip()=='STP' and flag):
+					lc+=1
 					break;
 				if(no_of_opcodes(line,opcode)==0 and flag):
 					error=True
@@ -98,7 +99,7 @@ def pass1(error,opcode,symbols):
 					error=True
 					flag=False
 					print("Error found on line number "+str(lineno)+": Insufficient no. of arguments.")
-				if(len(l)==2 and checkifinstruction(opcode,l[0])==False and checkifinstruction(opcode,l[1])==True and l[0]!='CLA' and l[0]!='STP' and flag):
+				if(len(l)==2 and checkifinstruction(opcode,l[0])==False and checkifinstruction(opcode,l[1])==True and l[1]!='CLA' and l[1]!='STP' and flag):
 					error=True
 					flag=False
 					print("Error found on line number "+str(lineno)+": Formatting Error")
@@ -119,16 +120,18 @@ def pass1(error,opcode,symbols):
 				if(colon!=-1 and flag):
 					head=line[:colon]
 					head=head.strip()
-					if(stp!=-1):
-						break;
 					if(checkifinstruction(opcode,head)):
 						error=True
 						flag=False
 						print("Error found on line number "+str(lineno)+": Label cannot be a opcode.")
-					if(head in symbols and symbols[head]<=-1 and flag):
+					if(head in symbols and symbols[head]==-1 and flag):
 						error=True
 						flag=False
 						print("Error found on line number "+str(lineno)+": Same symbol defined more than one time.")
+					if(stp!=-1):
+						symbols[head]=lc
+						lc+=1
+						continue
 					symbols[head]=lc
 				elif(brz!=-1 or brp!=-1 or brn!=-1 and flag):
 					head=l[1]
@@ -136,14 +139,17 @@ def pass1(error,opcode,symbols):
 					if(checkifinstruction(opcode,head)):
 						error=True
 						flag=False
-						print("Error found on line number "+str(lineno)+":Symbol cannot be a opcode.")
+						print("Error found on line number "+str(lineno)+": Symbol cannot be a opcode.")
 					if(head in symbols and flag):
 						if(symbols[head]==-1):
 							error=True
 							flag=False
 							print("Error found on line number "+str(lineno)+":"+head+" is a label type symbol.")
+						else:
+							lc+=1
+							continue
 					else:
-						symbols[head]=lc
+						symbols[head]=-2
 				elif(sac!=-1 or inp!=-1 and flag):
 					head=l[1]
 					head=head.strip()
@@ -159,35 +165,35 @@ def pass1(error,opcode,symbols):
 					symbols[head]=-1
 				lc+=1
 	symbolkeys=symbols.keys()
+	nvar=0
 	for i in range(len(symbols)):
 		if(symbols[symbolkeys[i]]==-2):
 			print("Error: Label not defined "+symbolkeys[i])
 			error=True
 		elif(symbols[symbolkeys[i]]==-1):
-			length+=1
-			symbols[symbolkeys[i]]=length
-	if(length>255):
+			nvar+=1
+			symbols[symbolkeys[i]]=lc
+			lc+=1
+	nlines=lc-nvar
+	if(nlines+nvar>256):
 		print("Error: Number of instructions has been exceeded than the limit-(0-255).")
 	file.close()    
 	file1.close()
-	return error,symbols			
+	return error,symbols,nlines	
 
 '''
-Parameter Type: Opcode Dictionary, Symbols Dictionary, List 
+Parameter Type: Opcode Dictionary, Symbols Dictionary, List , No of lines 
 Return type: Void
 This will run if their is no error in the assembly code. This will
 add corresponding machine code to machinecode.txt, all the variables to VariableTable.txt and all the labels to to LabelTable.txt.
 '''
-def pass2(opcode,symbols,l1,l2):
+def pass2(opcode,symbols,l1,l2,nlines):
 	for symbol in symbols.keys():
 		value=symbols[symbol]
 		binaryvalue=format(value,'08b')
 		symbols[symbol]=binaryvalue
 	mcode=open("machinecode.txt",'w')
 	acode=open("assemblycode.txt","r")
-	file1=open("assemblycode.txt","r")
-	lines=list(file1.readlines())
-	length=len(lines)
 	while(True):
 		line=acode.readline()
 		if not line:
@@ -208,22 +214,19 @@ def pass2(opcode,symbols,l1,l2):
 					mcode.write(opcodereturner(opcode,l[0])+" 00000000"+'\n')
 				else:
 					mcode.write(opcodereturner(opcode,l[0])+" "+str(symbols[l[1]])+'\n')
-			else:
-				length-=1
 	vtable=open("VariableTable.txt",'w')
 	vtable.write("VARIABLE\tADDRESS"+'\n')
 	ltable=open("LabelTable.txt",'w')
 	ltable.write("LABEL\t\tADDRESS"+'\n')
 	symbolskeys=symbols.keys()
 	for i in symbolskeys:
-		if(int(symbols[i],2)<=length):
+		if(int(symbols[i],2)<nlines):
 			ltable.write(i+'\t\t\t'+symbols[i]+'\n')
 		else:
 			vtable.write(i+'\t\t\t'+symbols[i]+'\n')
 	ltable.close()
 	mcode.close()
 	acode.close()
-	file1.close()
 	vtable.close()
 
 '''Initialization'''
@@ -232,11 +235,8 @@ symbols={}
 error=False
 l1=[]
 l2=[]
-error,symbols=pass1(error,opcode,symbols)
+error,symbols,nlines=pass1(error,opcode,symbols)
 if(error==False):
-	pass2(opcode,symbols,l1,l2)
+	pass2(opcode,symbols,l1,l2,nlines)
 else:
 	exit()
-
-
-
