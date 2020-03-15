@@ -56,8 +56,8 @@ symbols and return that dictionary. And also returns a boolean value
 that will be True if it encountered a error.
 '''
 def pass1(error,opcode,symbols):
-	file=open("assemblycode.txt","r")
-	file1=open("assemblycode.txt","r")
+	file=open("assemblycode.txt","r")   		#Open the file
+	file1=open("assemblycode.txt","r")			#Open the file for no. of lines
 	lines=list(file1.readlines())
 	length=len(lines)
 	lc=0
@@ -102,13 +102,11 @@ def pass1(error,opcode,symbols):
 					error=True
 					flag=False
 					print("Error found on line number "+str(lineno)+": Formatting Error")
-				####
 				for k in range(len(l)):
+					q=False
 					if(l[k] in opcode.keys()):
 						q=True
-					else:
-						q=False
-					if(q):
+					if(q==True):
 						if(len(l)-k-1>=2):
 							print("ERROR on Line "+str(lineno)+": More than one variable/label provided.")	#If more than required variables are provided
 							error=True	
@@ -171,7 +169,7 @@ def pass1(error,opcode,symbols):
 			length+=1
 			symbols[symbolkeys[i]]=length
 	if(length>255):
-		print("Error: Number of instructions has been exceeded than the limit-255.")
+		print("Error: Number of instructions has been exceeded than the limit-(0-255).")
 	file.close()    
 	file1.close()
 	return error,symbols			
