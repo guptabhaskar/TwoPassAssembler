@@ -158,8 +158,6 @@ def pass1(error,opcode,symbols):
 							print("Error found on line number "+str(lineno)+":"+head+" is a label type symbol.")
 					symbols[head]=-1
 				lc+=1
-			else:
-				ninstruc-=1
 	symbolkeys=symbols.keys()
 	for i in range(len(symbols)):
 		if(symbols[symbolkeys[i]]==-2):
