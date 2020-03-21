@@ -1,10 +1,5 @@
 ## Course: CSE112 Computer Organization at IIITD
 
-### Project Members:
-
-1. Bhaskar Gupta
-2. Rishav Kumar
-
 ### Assumptions:
 
 1. Clear Accumulator(CLR) clears the accumulator. No address and value is present after clearing the accumulator.
